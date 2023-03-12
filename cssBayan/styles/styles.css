@@ -1,0 +1,147 @@
+@import url('./normalize.css');
+
+html {
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1 {
+  text-align: center;
+  background-color: crimson;
+  margin: 0;
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.accordion {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transition: all .3s ease-out;
+
+}
+
+.accordion__icon {
+  border-top: .1rem solid darkgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  background-color: gold;
+  transition: all .3s ease-out;
+}
+
+.accordion__item {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  background-color: azure;
+}
+
+.accordion__radio {
+  display: none;
+}
+
+.accordion__content {
+  display: flex;
+  width: 0%;
+  padding: 1rem 0;
+  justify-content: center;
+  transition: all .7s ease-out;
+
+}
+
+.accordion__radio:checked~.accordion__title {
+  color: black;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.accordion__radio:checked~.accordion__content {
+  width: 100%;
+}
+
+.accordion__radio:checked~.accordion__icon {
+  background-color: green;
+  transform: rotate(180deg);
+  border-bottom: .1rem solid darkgray;
+  border-top: none;
+}
+
+.accordion__title {
+  padding: 0 1rem;
+  display: flex;
+  color: darkblue;
+  font-style: italic;
+  flex-grow: 1;
+  border-top: .1rem solid darkgray;
+  background-color: gold;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .accordion__icon {
+    display: none;
+  }
+
+  .accordion:hover .accordion__icon {
+    display: flex;
+  }
+
+  .accordion:hover .accordion__title {
+    color: black;
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  .accordion__item:hover .accordion__content {
+    width: 100%;
+  }
+
+  .accordion__item:hover .accordion__icon {
+    background-color: green;
+    transform: rotate(180deg);
+    border-bottom: .1rem solid darkgray;
+    border-top: none;
+  }
+
+  .accordion__radio:active~.accordion__title {
+    color: darkblue;
+  }
+}
+
+@media (max-width: 819px) {
+  html {
+    font-size: 30px;
+  }
+
+  .accordion__title {
+    width: calc(100% - 24px);
+  }
+
+
+  h1 {
+    background: blueviolet;
+  }
+
+  .accordion__item {
+    align-items: center;
+  }
+}
+
+@media (min-width: 820px) and (max-width: 1023px) {
+  html {
+    font-size: 25px;
+  }
+}
