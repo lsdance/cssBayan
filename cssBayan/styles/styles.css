@@ -25,6 +25,8 @@ h1 {
   list-style: none;
   padding: 0;
   margin: 0;
+  transition: all .3s ease-out;
+
 }
 
 .accordion__icon {
@@ -34,6 +36,7 @@ h1 {
   justify-content: center;
   height: 2rem;
   background-color: gold;
+  transition: all .3s ease-out;
 }
 
 .accordion__item {
@@ -49,10 +52,12 @@ h1 {
 }
 
 .accordion__content {
-  display: none;
-  width: 100%;
+  display: flex;
+  width: 0%;
   padding: 1rem 0;
   justify-content: center;
+  transition: all .7s ease-out;
+
 }
 
 .accordion__radio:checked~.accordion__title {
@@ -62,7 +67,7 @@ h1 {
 }
 
 .accordion__radio:checked~.accordion__content {
-  display: flex;
+  width: 100%;
 }
 
 .accordion__radio:checked~.accordion__icon {
@@ -101,7 +106,7 @@ h1 {
   }
 
   .accordion__item:hover .accordion__content {
-    display: flex;
+    width: 100%;
   }
 
   .accordion__item:hover .accordion__icon {
@@ -109,6 +114,10 @@ h1 {
     transform: rotate(180deg);
     border-bottom: .1rem solid darkgray;
     border-top: none;
+  }
+
+  .accordion__radio:active~.accordion__title {
+    color: darkblue;
   }
 }
 
