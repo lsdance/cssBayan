@@ -111,3 +111,28 @@ h1 {
     border-top: none;
   }
 }
+
+@media (max-width: 819px) {
+  html {
+    font-size: 30px;
+  }
+
+  .accordion__title {
+    width: calc(100% - 24px);
+  }
+
+
+  h1 {
+    background: blueviolet;
+  }
+
+  .accordion__item {
+    align-items: center;
+  }
+}
+
+@media (min-width: 820px) and (max-width: 1023px) {
+  html {
+    font-size: 25px;
+  }
+}
